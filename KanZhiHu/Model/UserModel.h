@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <YYModel/YYModel.h>
 
 #import "UserDetail.h"
 #import "UserStar.h"
 #import "UserTrend.h"
 #import "UserTopAnswers.h"
 
-@interface UserModel : NSObject <YYModel>
+@interface UserModel : NSObject
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *avatar;

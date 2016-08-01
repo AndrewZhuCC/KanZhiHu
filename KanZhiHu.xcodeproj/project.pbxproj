@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		36B9775FCA361005BCDC4B3C /* libPods-KanZhiHuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */; };
+		49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B861D4EF6960064231B /* GetPostAnswersResult.m */; };
 		49834E581D4EDBC0005117BB /* UserTrend.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E571D4EDBC0005117BB /* UserTrend.m */; };
 		49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E5D1D4EDCA7005117BB /* UserModel.m */; };
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
+		4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 499585791D4EEF4300DAB88C /* NetworkManager.m */; };
+		499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */; };
 		49DBD8731D4B58550087A8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8721D4B58550087A8D0 /* main.m */; };
 		49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8751D4B58550087A8D0 /* AppDelegate.m */; };
 		49DBD87E1D4B58550087A8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBD87D1D4B58550087A8D0 /* Assets.xcassets */; };
@@ -47,12 +50,18 @@
 		2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KanZhiHuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3579D32B5F9442768E34EC16 /* Pods-KanZhiHuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHuUITests/Pods-KanZhiHuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1DF2F576A81B79D775FC91 /* Pods-KanZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu.release.xcconfig"; sourceTree = "<group>"; };
+		49063B851D4EF6960064231B /* GetPostAnswersResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostAnswersResult.h; path = Model/GetPostAnswersResult.h; sourceTree = "<group>"; };
+		49063B861D4EF6960064231B /* GetPostAnswersResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPostAnswersResult.m; path = Model/GetPostAnswersResult.m; sourceTree = "<group>"; };
 		49834E561D4EDBC0005117BB /* UserTrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTrend.h; path = Model/UserTrend.h; sourceTree = "<group>"; };
 		49834E571D4EDBC0005117BB /* UserTrend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTrend.m; path = Model/UserTrend.m; sourceTree = "<group>"; };
 		49834E5C1D4EDCA7005117BB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Model/UserModel.h; sourceTree = "<group>"; };
 		49834E5D1D4EDCA7005117BB /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = Model/UserModel.m; sourceTree = "<group>"; };
 		49834E5F1D4EDCC4005117BB /* UserTopAnswers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTopAnswers.h; path = Model/UserTopAnswers.h; sourceTree = "<group>"; };
 		49834E601D4EDCC4005117BB /* UserTopAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTopAnswers.m; path = Model/UserTopAnswers.m; sourceTree = "<group>"; };
+		499585781D4EEF4300DAB88C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		499585791D4EEF4300DAB88C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		4995857E1D4EF0FD00DAB88C /* GetPostsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostsResult.h; path = Model/GetPostsResult.h; sourceTree = "<group>"; };
+		4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPostsResult.m; path = Model/GetPostsResult.m; sourceTree = "<group>"; };
 		49DBD86E1D4B58550087A8D0 /* KanZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBD8721D4B58550087A8D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DBD8741D4B58550087A8D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +155,8 @@
 			children = (
 				49DBD8741D4B58550087A8D0 /* AppDelegate.h */,
 				49DBD8751D4B58550087A8D0 /* AppDelegate.m */,
+				499585781D4EEF4300DAB88C /* NetworkManager.h */,
+				499585791D4EEF4300DAB88C /* NetworkManager.m */,
 				49DBD8A71D4B58E80087A8D0 /* Model */,
 				49DBD87D1D4B58550087A8D0 /* Assets.xcassets */,
 				49DBD87F1D4B58550087A8D0 /* LaunchScreen.storyboard */,
@@ -184,8 +195,12 @@
 		49DBD8A71D4B58E80087A8D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4995857E1D4EF0FD00DAB88C /* GetPostsResult.h */,
+				4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */,
 				49DBD8A81D4B58F40087A8D0 /* Post.h */,
 				49DBD8A91D4B58F40087A8D0 /* Post.m */,
+				49063B851D4EF6960064231B /* GetPostAnswersResult.h */,
+				49063B861D4EF6960064231B /* GetPostAnswersResult.m */,
 				49DBD8AB1D4B5B2D0087A8D0 /* PostAnswer.h */,
 				49DBD8AC1D4B5B2D0087A8D0 /* PostAnswer.m */,
 				49834E5C1D4EDCA7005117BB /* UserModel.h */,
@@ -478,11 +493,14 @@
 				49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */,
 				49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */,
 				49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */,
+				499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */,
 				49DBD8AA1D4B58F40087A8D0 /* Post.m in Sources */,
 				49DBD8B01D4B5BC60087A8D0 /* UserDetail.m in Sources */,
 				49DBD8731D4B58550087A8D0 /* main.m in Sources */,
 				49834E581D4EDBC0005117BB /* UserTrend.m in Sources */,
 				49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */,
+				49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */,
+				4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */,
 				49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

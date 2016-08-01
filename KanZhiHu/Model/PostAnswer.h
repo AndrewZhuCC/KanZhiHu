@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PostAnswer : NSObject
+@interface PostAnswer : NSObject <NSCopying>
 
 @property (copy, nonatomic) NSString *title;
 @property (strong, nonatomic) NSDate *time;

@@ -8,6 +8,12 @@
 
 #import "UserModel.h"
 
+#import <YYModel/YYModel.h>
+
+@interface UserModel () <YYModel>
+
+@end
+
 @implementation UserModel
 
 + (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper {

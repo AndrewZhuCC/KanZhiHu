@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Post : NSObject
+@interface Post : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSDate *date;
 @property (copy, nonatomic) NSString *name;
