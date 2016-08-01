@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36B9775FCA361005BCDC4B3C /* libPods-KanZhiHuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */; };
 		49834E581D4EDBC0005117BB /* UserTrend.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E571D4EDBC0005117BB /* UserTrend.m */; };
 		49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E5D1D4EDCA7005117BB /* UserModel.m */; };
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
@@ -20,6 +21,8 @@
 		49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8AC1D4B5B2D0087A8D0 /* PostAnswer.m */; };
 		49DBD8B01D4B5BC60087A8D0 /* UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8AF1D4B5BC60087A8D0 /* UserDetail.m */; };
 		49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8B21D4B5DDE0087A8D0 /* UserStar.m */; };
+		87735FDF2A7FA6D587108A46 /* libPods-KanZhiHuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E92FB43F69E9EB845AEB4A /* libPods-KanZhiHuTests.a */; };
+		BC56529A38F55D8AA4438F06 /* libPods-KanZhiHu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7859A0B786891E29CDF6759 /* libPods-KanZhiHu.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22F8BD77A0B040D5E7D3EF51 /* Pods-KanZhiHu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu.debug.xcconfig"; sourceTree = "<group>"; };
+		2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KanZhiHuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3579D32B5F9442768E34EC16 /* Pods-KanZhiHuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHuUITests/Pods-KanZhiHuUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B1DF2F576A81B79D775FC91 /* Pods-KanZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu.release.xcconfig"; sourceTree = "<group>"; };
 		49834E561D4EDBC0005117BB /* UserTrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTrend.h; path = Model/UserTrend.h; sourceTree = "<group>"; };
 		49834E571D4EDBC0005117BB /* UserTrend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTrend.m; path = Model/UserTrend.m; sourceTree = "<group>"; };
 		49834E5C1D4EDCA7005117BB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Model/UserModel.h; sourceTree = "<group>"; };
@@ -67,6 +74,11 @@
 		49DBD8AF1D4B5BC60087A8D0 /* UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetail.m; path = Model/UserDetail.m; sourceTree = "<group>"; };
 		49DBD8B11D4B5DDE0087A8D0 /* UserStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserStar.h; path = Model/UserStar.h; sourceTree = "<group>"; };
 		49DBD8B21D4B5DDE0087A8D0 /* UserStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserStar.m; path = Model/UserStar.m; sourceTree = "<group>"; };
+		54EDE2681A5CCF748C6E27E8 /* Pods-KanZhiHuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHuTests/Pods-KanZhiHuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57E92FB43F69E9EB845AEB4A /* libPods-KanZhiHuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KanZhiHuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7859A0B786891E29CDF6759 /* libPods-KanZhiHu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KanZhiHu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B964BEA8A153A880FDA3BEDC /* Pods-KanZhiHuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHuTests/Pods-KanZhiHuTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB60B4E4400014B9A34C21E4 /* Pods-KanZhiHuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHuUITests/Pods-KanZhiHuUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC56529A38F55D8AA4438F06 /* libPods-KanZhiHu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87735FDF2A7FA6D587108A46 /* libPods-KanZhiHuTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +102,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B9775FCA361005BCDC4B3C /* libPods-KanZhiHuUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9ED930830C763FCD7FB9A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7859A0B786891E29CDF6759 /* libPods-KanZhiHu.a */,
+				57E92FB43F69E9EB845AEB4A /* libPods-KanZhiHuTests.a */,
+				2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49DBD8651D4B58550087A8D0 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +126,8 @@
 				49DBD88A1D4B58550087A8D0 /* KanZhiHuTests */,
 				49DBD8951D4B58550087A8D0 /* KanZhiHuUITests */,
 				49DBD86F1D4B58550087A8D0 /* Products */,
+				5513FBBD3FEFEA35ADDAF57B /* Pods */,
+				1C9ED930830C763FCD7FB9A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +202,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		5513FBBD3FEFEA35ADDAF57B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22F8BD77A0B040D5E7D3EF51 /* Pods-KanZhiHu.debug.xcconfig */,
+				3B1DF2F576A81B79D775FC91 /* Pods-KanZhiHu.release.xcconfig */,
+				54EDE2681A5CCF748C6E27E8 /* Pods-KanZhiHuTests.debug.xcconfig */,
+				B964BEA8A153A880FDA3BEDC /* Pods-KanZhiHuTests.release.xcconfig */,
+				3579D32B5F9442768E34EC16 /* Pods-KanZhiHuUITests.debug.xcconfig */,
+				BB60B4E4400014B9A34C21E4 /* Pods-KanZhiHuUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DBD89B1D4B58550087A8D0 /* Build configuration list for PBXNativeTarget "KanZhiHu" */;
 			buildPhases = (
+				79A250A83F4249A878440F5E /* [CP] Check Pods Manifest.lock */,
 				49DBD86A1D4B58550087A8D0 /* Sources */,
 				49DBD86B1D4B58550087A8D0 /* Frameworks */,
 				49DBD86C1D4B58550087A8D0 /* Resources */,
+				4777949052C2E08261FE294D /* [CP] Embed Pods Frameworks */,
+				13F9D1C709690A797294E9FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DBD89E1D4B58550087A8D0 /* Build configuration list for PBXNativeTarget "KanZhiHuTests" */;
 			buildPhases = (
+				477BB1DED2948F6B52ECFE39 /* [CP] Check Pods Manifest.lock */,
 				49DBD8831D4B58550087A8D0 /* Sources */,
 				49DBD8841D4B58550087A8D0 /* Frameworks */,
 				49DBD8851D4B58550087A8D0 /* Resources */,
+				02C8E541F7B708944B2434D3 /* [CP] Embed Pods Frameworks */,
+				108164DBBE4545B0EAD0884F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DBD8A11D4B58550087A8D0 /* Build configuration list for PBXNativeTarget "KanZhiHuUITests" */;
 			buildPhases = (
+				732BC6DC2026BE991A30CAC0 /* [CP] Check Pods Manifest.lock */,
 				49DBD88E1D4B58550087A8D0 /* Sources */,
 				49DBD88F1D4B58550087A8D0 /* Frameworks */,
 				49DBD8901D4B58550087A8D0 /* Resources */,
+				C14F9CA4AA37DC401383539D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +346,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02C8E541F7B708944B2434D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KanZhiHuTests/Pods-KanZhiHuTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		108164DBBE4545B0EAD0884F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KanZhiHuTests/Pods-KanZhiHuTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13F9D1C709690A797294E9FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4777949052C2E08261FE294D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		477BB1DED2948F6B52ECFE39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		732BC6DC2026BE991A30CAC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79A250A83F4249A878440F5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C14F9CA4AA37DC401383539D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KanZhiHuUITests/Pods-KanZhiHuUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49DBD86A1D4B58550087A8D0 /* Sources */ = {
@@ -445,9 +616,11 @@
 		};
 		49DBD89C1D4B58550087A8D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22F8BD77A0B040D5E7D3EF51 /* Pods-KanZhiHu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KanZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tecom.KanZhiHu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,9 +629,11 @@
 		};
 		49DBD89D1D4B58550087A8D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1DF2F576A81B79D775FC91 /* Pods-KanZhiHu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KanZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tecom.KanZhiHu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,6 +642,7 @@
 		};
 		49DBD89F1D4B58550087A8D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54EDE2681A5CCF748C6E27E8 /* Pods-KanZhiHuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KanZhiHuTests/Info.plist;
@@ -479,6 +655,7 @@
 		};
 		49DBD8A01D4B58550087A8D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B964BEA8A153A880FDA3BEDC /* Pods-KanZhiHuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KanZhiHuTests/Info.plist;
@@ -491,6 +668,7 @@
 		};
 		49DBD8A21D4B58550087A8D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3579D32B5F9442768E34EC16 /* Pods-KanZhiHuUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KanZhiHuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -502,6 +680,7 @@
 		};
 		49DBD8A31D4B58550087A8D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB60B4E4400014B9A34C21E4 /* Pods-KanZhiHuUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KanZhiHuUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
