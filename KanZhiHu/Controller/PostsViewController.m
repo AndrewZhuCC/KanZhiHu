@@ -12,6 +12,7 @@
 #import "Post.h"
 #import "NetworkManager.h"
 #import "PostsTableViewCell.h"
+#import "PostsAnswersViewController.h"
 
 #import <Masonry/Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
@@ -114,6 +115,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PostsAnswersViewController *vc = PostsAnswersViewController.new;
+    vc.post = self.entitys[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -

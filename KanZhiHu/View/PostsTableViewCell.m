@@ -106,10 +106,10 @@
 #pragma mark - Public Methods
 
 - (void)configureTemplateWithEntity:(Post *)post {
-    self.lbexcerpt.text = [post.excerpt stringByReplacingOccurrencesOfString:@"、" withString:@"\n"];
+    self.lbexcerpt.text = [[post.excerpt stringByReplacingOccurrencesOfString:@"』、" withString:@"』\n"] stringByReplacingOccurrencesOfString:@"摘录了" withString:@"摘录了\n"];
     self.lbAnswerCount.text = [NSString stringWithFormat:@"%@", @(post.count)];
     NSDateFormatter *formatter = NSDateFormatter.new;
-    [formatter setDateFormat:@"'Publish at 'yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:@"'Publish at 'yyyy-MM-dd"];
     self.lbDate.text = [formatter stringFromDate:post.date];
     
     __weak typeof(self) wself = self;

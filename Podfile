@@ -13,6 +13,7 @@ target 'KanZhiHu' do
   pod 'MBProgressHUD', '~> 0.9.2'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
   pod 'SDWebImage', '~> 3.8.1'
+  pod 'TLYShyNavBar', '~> 1.1.0'
 
   target 'KanZhiHuTests' do
     inherit! :search_paths

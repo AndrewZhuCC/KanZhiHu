@@ -21,8 +21,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     PostsViewController *vc = PostsViewController.new;
-    self.window.rootViewController = vc;
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nvc;
     
+    [self.window setTintColor:[[UIColor blueColor] colorWithAlphaComponent:0.8]];
     [self.window makeKeyAndVisible];
     return YES;
 }
