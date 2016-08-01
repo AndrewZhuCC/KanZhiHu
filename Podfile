@@ -10,6 +10,9 @@ target 'KanZhiHu' do
   pod 'YYModel', '~> 1.0.4'
   pod 'Masonry', '~> 1.0.1'
   pod 'MJRefresh', '~> 3.1.9'
+  pod 'MBProgressHUD', '~> 0.9.2'
+  pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
+  pod 'SDWebImage', '~> 3.8.1'
 
   target 'KanZhiHuTests' do
     inherit! :search_paths
