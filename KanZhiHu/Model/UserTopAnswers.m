@@ -20,4 +20,8 @@
     return result;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@(%p){\ntitle:%@\nlink:%@\nagree:%@\ndate:%@\nispost:%@\n}", self.class, self, self.title, self.link, @(self.agree), self.date, @(self.ispost)];
+}
+
 @end

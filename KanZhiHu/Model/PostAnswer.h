@@ -17,6 +17,6 @@
 @property (copy, nonatomic) NSString *answerid;
 @property (copy, nonatomic) NSString *authorhash;
 @property (copy, nonatomic) NSString *avatar;
-@property (strong, nonatomic) NSNumber *vote;
+@property (assign, nonatomic) NSInteger vote;
 
 @end

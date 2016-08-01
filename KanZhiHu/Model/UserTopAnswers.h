@@ -12,7 +12,7 @@
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *link;
-@property (strong, nonatomic) NSNumber *agree;
+@property (assign, nonatomic) NSInteger agree;
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) BOOL ispost;
 

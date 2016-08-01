@@ -19,4 +19,8 @@
     return result;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@(%p){\ndate:%@\nanswer:%@\nagree:%@\nfollower:%@\n}", self.class, self, self.date, @(self.answer), @(self.agree), @(self.follower)];
+}
+
 @end

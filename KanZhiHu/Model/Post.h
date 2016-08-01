@@ -13,8 +13,8 @@
 @property (strong, nonatomic) NSDate *date;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *pic;
-@property (strong, nonatomic) NSNumber *publishtime;
-@property (strong, nonatomic) NSNumber *count;
+@property (assign, nonatomic) NSInteger publishtime;
+@property (assign, nonatomic) NSInteger count;
 @property (copy, nonatomic) NSString *excerpt;
 
 @end

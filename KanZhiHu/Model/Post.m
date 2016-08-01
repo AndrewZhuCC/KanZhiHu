@@ -10,4 +10,8 @@
 
 @implementation Post
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@(%p){\ndate:%@\nname:%@\npic:%@\npublishtime:%@\ncount:%@\nexcerpt:%@\n}", self.class, self, self.date, self.name, self.pic, @(self.publishtime), @(self.count), self.excerpt];
+}
+
 @end

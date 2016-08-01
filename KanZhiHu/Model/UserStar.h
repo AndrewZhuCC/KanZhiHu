@@ -10,12 +10,12 @@
 
 @interface UserStar : NSObject
 
-@property (strong, nonatomic) NSNumber *answerrank;
-@property (strong, nonatomic) NSNumber *agreerank;
-@property (strong, nonatomic) NSNumber *ratiorank;
-@property (strong, nonatomic) NSNumber *followerrank;
-@property (strong, nonatomic) NSNumber *favrank;
-@property (strong, nonatomic) NSNumber *count1000rank;
-@property (strong, nonatomic) NSNumber *count100rank;
+@property (assign, nonatomic) NSInteger answerrank;
+@property (assign, nonatomic) NSInteger agreerank;
+@property (assign, nonatomic) NSInteger ratiorank;
+@property (assign, nonatomic) NSInteger followerrank;
+@property (assign, nonatomic) NSInteger favrank;
+@property (assign, nonatomic) NSInteger count1000rank;
+@property (assign, nonatomic) NSInteger count100rank;
 
 @end

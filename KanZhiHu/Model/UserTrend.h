@@ -11,8 +11,8 @@
 @interface UserTrend : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSDate *date;
-@property (strong, nonatomic) NSNumber *answer;
-@property (strong, nonatomic) NSNumber *agree;
-@property (strong, nonatomic) NSNumber *follower;
+@property (assign, nonatomic) NSInteger answer;
+@property (assign, nonatomic) NSInteger agree;
+@property (assign, nonatomic) NSInteger follower;
 
 @end
