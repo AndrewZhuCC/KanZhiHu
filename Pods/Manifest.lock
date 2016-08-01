@@ -23,6 +23,7 @@ PODS:
   - TLYShyNavBar (1.1.0)
   - UITableView+FDTemplateLayoutCell (1.5.beta)
   - YYModel (1.0.4)
+  - ZYCornerRadius (0.9.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - TLYShyNavBar (~> 1.1.0)
   - UITableView+FDTemplateLayoutCell (~> 1.5.beta)
   - YYModel (~> 1.0.4)
+  - ZYCornerRadius (~> 0.9.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -43,7 +45,8 @@ SPEC CHECKSUMS:
   TLYShyNavBar: 3150e9a03ff8ab5fd81de00167e8829b91af8326
   UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZYCornerRadius: 33d8606dd981ef3b50d4445a9e505a1ba0501332
 
-PODFILE CHECKSUM: 7c46ad5889c8d3fe51f1ade1923eb5090c826f79
+PODFILE CHECKSUM: 3ad696a91d4fde52e7a09c83b3cd5063a5f7d9c9
 
 COCOAPODS: 1.0.1

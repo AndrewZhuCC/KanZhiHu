@@ -14,6 +14,7 @@ target 'KanZhiHu' do
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
   pod 'SDWebImage', '~> 3.8.1'
   pod 'TLYShyNavBar', '~> 1.1.0'
+  pod 'ZYCornerRadius', '~> 0.9.3'
 
   target 'KanZhiHuTests' do
     inherit! :search_paths

@@ -12,6 +12,7 @@
 
 #import <Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <UIImageView+CornerRadius.h>
 
 @interface PostAnswersTableViewCell ()
 
@@ -48,7 +49,7 @@
         [_lbName setFont:[UIFont systemFontOfSize:15]];
         _lbName.numberOfLines = 0;
         
-        _imgView = UIImageView.new;
+        _imgView = [[UIImageView alloc] initWithRoundingRectImageView];
         _imgView.contentMode = UIViewContentModeScaleToFill;
         
         [contentView addSubview:_imgView];
