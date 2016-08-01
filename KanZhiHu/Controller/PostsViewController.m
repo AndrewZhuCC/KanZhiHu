@@ -45,6 +45,11 @@
     
     self.shyNavBarManager.scrollView = self.tableView;
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    self.title = @"Today";
+    
     NSLog(@"%s", __func__);
 }
 

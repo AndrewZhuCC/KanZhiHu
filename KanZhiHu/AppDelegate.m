@@ -22,9 +22,12 @@
     
     PostsViewController *vc = PostsViewController.new;
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    nvc.navigationBar.translucent = NO;
     self.window.rootViewController = nvc;
     
-    [self.window setTintColor:[[UIColor blueColor] colorWithAlphaComponent:0.8]];
+    [UINavigationBar.appearance setBarTintColor:[UIColor colorWithRed:0.3 green:0.7 blue:1 alpha:1]];
+    
+    [self.window setTintColor:[UIColor lightTextColor]];
     [self.window makeKeyAndVisible];
     return YES;
 }

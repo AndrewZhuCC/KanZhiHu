@@ -20,6 +20,9 @@
 #import <UITableView+FDTemplateLayoutCell.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
+#define ZHIHU_URL @"https://www.zhihu.com/question"
+#define ZHIHU_APP_URL @"zhihu://"
+
 @interface PostsAnswersViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (copy, nonatomic) NSDictionary<NSString *, NSArray<PostAnswer *> *> *entitys;
@@ -47,6 +50,10 @@
     [self.hud hide:NO];
     
     self.shyNavBarManager.scrollView = self.tableView;
+    
+    NSDateFormatter *formatter = NSDateFormatter.new;
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.title = [formatter stringFromDate:self.post.date];
     
     NSLog(@"%s", __func__);
 }
@@ -85,7 +92,6 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.sectionHeaderHeight = 30;
     [self.view addSubview:self.tableView];
     
     [self.tableView registerClass:PostAnswersTableViewCell.class forCellReuseIdentifier:NSStringFromClass(PostAnswersTableViewCell.class)];
@@ -115,11 +121,12 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     PostAnswer *entity = [[self.entitys objectForKey:self.keys[section]] firstObject];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    view.backgroundColor = [UIColor colorWithRed:0.3 green:0.7 blue:1 alpha:1];
     UILabel *title = UILabel.new;
     title.textColor = [UIColor blackColor];
     title.backgroundColor = [UIColor clearColor];
     title.text = entity.title;
+    title.numberOfLines = 0;
     [view addSubview:title];
     
     [title mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -136,10 +143,27 @@
     }];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    PostAnswer *entity = [[self.entitys objectForKey:self.keys[section]] firstObject];
+    UILabel *title = UILabel.new;
+    title.numberOfLines = 0;
+    title.text = entity.title;
+    CGSize size = [title systemLayoutSizeFittingSize:CGSizeMake(UIScreen.mainScreen.bounds.size.width - 10, CGFLOAT_MAX)];
+    return size.height + 10;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PostAnswer *entity = [self.entitys objectForKey:self.keys[indexPath.section]][indexPath.row];
+    NSString *zhihuAnswerURLS = [NSString stringWithFormat:@"%@answers/%@", ZHIHU_APP_URL, entity.answerid];
+//    NSString *zhihuapp = [ZHIHU_APP_URL stringByAppendingPathComponent:entity.answerid];
+    NSURL *url = [NSURL URLWithString:zhihuAnswerURLS];
+    NSLog(@"%@", url);
+    if (url) {
+        [UIApplication.sharedApplication openURL:url];
+    }
+}
 
 #pragma mark -
 
@@ -173,7 +197,6 @@
 - (void)calEntitysWithResult:(GetPostAnswersResult *)result {
     NSMutableDictionary *dic = NSMutableDictionary.new;
     for (PostAnswer *answer in result.answers) {
-        NSLog(@"%@", answer.questionid);
         NSMutableArray *ary = [dic objectForKey:answer.questionid];
         if (!ary) {
             ary = NSMutableArray.new;

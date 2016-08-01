@@ -39,8 +39,11 @@
         [_lbDate setTextColor:[UIColor lightGrayColor]];
         
         _lbexcerpt = UILabel.new;
-        [_lbexcerpt setBackgroundColor:[UIColor clearColor]];
+        [_lbexcerpt setBackgroundColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.7 alpha:0.3]];
         [_lbexcerpt setTextColor:[UIColor blackColor]];
+        _lbexcerpt.layer.cornerRadius = 5;
+        _lbexcerpt.layer.masksToBounds = YES;
+        _lbexcerpt.layoutMargins = UIEdgeInsetsMake(5, 5, 5, 5);
         _lbexcerpt.numberOfLines = 0;
         
         _lbAnswerCount = UILabel.new;

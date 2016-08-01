@@ -86,7 +86,7 @@
         make.top.equalTo(self.contentView).with.offset(5);
         make.left.equalTo(self.imgView.mas_right).with.offset(5);
         make.right.equalTo(self.contentView).with.offset(-5);
-        make.bottom.equalTo(self.contentView).with.offset(-15);
+        make.bottom.equalTo(self.lbVote.mas_top).with.offset(-5);
     }];
     
     [self.lbName mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -97,7 +97,7 @@
     }];
     
     [self.lbVote mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(10);
+        make.height.mas_equalTo(15);
         make.bottom.equalTo(self.contentView).with.offset(-5);
         make.right.equalTo(self.contentView).with.offset(-5);
     }];

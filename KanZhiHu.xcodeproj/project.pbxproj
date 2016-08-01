@@ -154,10 +154,10 @@
 		49063B8D1D4F125C0064231B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				49063B971D4F4A5B0064231B /* PostsAnswersViewController.h */,
-				49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */,
 				49063B8E1D4F127D0064231B /* PostsViewController.h */,
 				49063B8F1D4F127D0064231B /* PostsViewController.m */,
+				49063B971D4F4A5B0064231B /* PostsAnswersViewController.h */,
+				49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
