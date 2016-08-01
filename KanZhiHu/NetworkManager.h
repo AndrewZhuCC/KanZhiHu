@@ -19,7 +19,7 @@ typedef void(^GetFail)(NSError *error, NSString *errorFromNet);
 
 @interface NetworkManager : NSObject
 
-+ (void)queryPostsWithSuccessBlock:(GetPostsSuccess)success fail:(GetFail)fail;
-+ (void)queryPostAnswersWithPost:(Post *)post success:(GetPostAnswersSuccess)success fail:(GetFail)fail;
++ (NSURLSessionDataTask *)queryPostsWithSuccessBlock:(GetPostsSuccess)success fail:(GetFail)fail;
++ (NSURLSessionDataTask *)queryPostAnswersWithPost:(Post *)post success:(GetPostAnswersSuccess)success fail:(GetFail)fail;
 
 @end

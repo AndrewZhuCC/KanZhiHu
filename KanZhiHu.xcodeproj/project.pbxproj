@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		36B9775FCA361005BCDC4B3C /* libPods-KanZhiHuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E37D378DDD84D64956091DC /* libPods-KanZhiHuUITests.a */; };
 		49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B861D4EF6960064231B /* GetPostAnswersResult.m */; };
+		49063B8C1D4F0A310064231B /* PostsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B8B1D4F0A310064231B /* PostsTableViewCell.m */; };
+		49063B901D4F127D0064231B /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B8F1D4F127D0064231B /* PostsViewController.m */; };
 		49834E581D4EDBC0005117BB /* UserTrend.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E571D4EDBC0005117BB /* UserTrend.m */; };
 		49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E5D1D4EDCA7005117BB /* UserModel.m */; };
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
@@ -52,6 +54,10 @@
 		3B1DF2F576A81B79D775FC91 /* Pods-KanZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-KanZhiHu/Pods-KanZhiHu.release.xcconfig"; sourceTree = "<group>"; };
 		49063B851D4EF6960064231B /* GetPostAnswersResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostAnswersResult.h; path = Model/GetPostAnswersResult.h; sourceTree = "<group>"; };
 		49063B861D4EF6960064231B /* GetPostAnswersResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPostAnswersResult.m; path = Model/GetPostAnswersResult.m; sourceTree = "<group>"; };
+		49063B8A1D4F0A310064231B /* PostsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsTableViewCell.h; path = View/PostsTableViewCell.h; sourceTree = "<group>"; };
+		49063B8B1D4F0A310064231B /* PostsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsTableViewCell.m; path = View/PostsTableViewCell.m; sourceTree = "<group>"; };
+		49063B8E1D4F127D0064231B /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = Controller/PostsViewController.h; sourceTree = "<group>"; };
+		49063B8F1D4F127D0064231B /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = Controller/PostsViewController.m; sourceTree = "<group>"; };
 		49834E561D4EDBC0005117BB /* UserTrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTrend.h; path = Model/UserTrend.h; sourceTree = "<group>"; };
 		49834E571D4EDBC0005117BB /* UserTrend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTrend.m; path = Model/UserTrend.m; sourceTree = "<group>"; };
 		49834E5C1D4EDCA7005117BB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Model/UserModel.h; sourceTree = "<group>"; };
@@ -128,6 +134,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		49063B891D4F0A0E0064231B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49063B8A1D4F0A310064231B /* PostsTableViewCell.h */,
+				49063B8B1D4F0A310064231B /* PostsTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49063B8D1D4F125C0064231B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49063B8E1D4F127D0064231B /* PostsViewController.h */,
+				49063B8F1D4F127D0064231B /* PostsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		49DBD8651D4B58550087A8D0 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +181,8 @@
 				49DBD8751D4B58550087A8D0 /* AppDelegate.m */,
 				499585781D4EEF4300DAB88C /* NetworkManager.h */,
 				499585791D4EEF4300DAB88C /* NetworkManager.m */,
+				49063B8D1D4F125C0064231B /* Controller */,
+				49063B891D4F0A0E0064231B /* View */,
 				49DBD8A71D4B58E80087A8D0 /* Model */,
 				49DBD87D1D4B58550087A8D0 /* Assets.xcassets */,
 				49DBD87F1D4B58550087A8D0 /* LaunchScreen.storyboard */,
@@ -497,6 +523,8 @@
 				49DBD8AA1D4B58F40087A8D0 /* Post.m in Sources */,
 				49DBD8B01D4B5BC60087A8D0 /* UserDetail.m in Sources */,
 				49DBD8731D4B58550087A8D0 /* main.m in Sources */,
+				49063B8C1D4F0A310064231B /* PostsTableViewCell.m in Sources */,
+				49063B901D4F127D0064231B /* PostsViewController.m in Sources */,
 				49834E581D4EDBC0005117BB /* UserTrend.m in Sources */,
 				49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */,
 				49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */,

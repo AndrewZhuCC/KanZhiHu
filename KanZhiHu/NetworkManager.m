@@ -21,8 +21,8 @@
 
 @implementation NetworkManager
 
-+ (void)queryPostsWithSuccessBlock:(GetPostsSuccess)success fail:(GetFail)fail {
-    [AFHTTPSessionManager.manager GET:URL_GETPOSTS parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
++ (NSURLSessionDataTask *)queryPostsWithSuccessBlock:(GetPostsSuccess)success fail:(GetFail)fail {
+    return [AFHTTPSessionManager.manager GET:URL_GETPOSTS parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([[responseObject objectForKey:@"error"] isEqualToString:@""]) {
             GetPostsResult *result = [GetPostsResult yy_modelWithJSON:responseObject];
@@ -36,8 +36,8 @@
     }];
 }
 
-+ (void)queryPostAnswersWithPost:(Post *)post success:(GetPostAnswersSuccess)success fail:(GetFail)fail {
-    [AFHTTPSessionManager.manager GET:[self getPostAnswersURLWithPost:post] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
++ (NSURLSessionDataTask *)queryPostAnswersWithPost:(Post *)post success:(GetPostAnswersSuccess)success fail:(GetFail)fail {
+    return [AFHTTPSessionManager.manager GET:[self getPostAnswersURLWithPost:post] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([[responseObject objectForKey:@"error"] isEqualToString:@""]) {
             GetPostAnswersResult *result = [GetPostAnswersResult yy_modelWithJSON:responseObject];

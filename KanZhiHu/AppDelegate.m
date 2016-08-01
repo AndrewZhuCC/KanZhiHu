@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NetworkManager.h"
-#import "GetPostsResult.h"
-#import "Post.h"
+#import "PostsViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,19 +20,8 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    [NetworkManager queryPostsWithSuccessBlock:^(GetPostsResult *result) {
-        NSLog(@"%@", result);
-        if (result.count > 0) {
-            Post *post = [result.posts objectAtIndex:0];
-            [NetworkManager queryPostAnswersWithPost:post success:^(GetPostAnswersResult *result) {
-                NSLog(@"%@", result);
-            } fail:^(NSError *error, NSString *errorFromNet) {
-                NSLog(@"%@(%@)", error, errorFromNet);
-            }];
-        }
-    } fail:^(NSError *error, NSString *errorFromNet) {
-        NSLog(@"%@(%@)", error, errorFromNet);
-    }];
+    PostsViewController *vc = PostsViewController.new;
+    self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
     return YES;
