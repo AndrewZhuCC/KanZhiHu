@@ -11,8 +11,8 @@
 		49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B861D4EF6960064231B /* GetPostAnswersResult.m */; };
 		49063B8C1D4F0A310064231B /* PostsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B8B1D4F0A310064231B /* PostsTableViewCell.m */; };
 		49063B901D4F127D0064231B /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B8F1D4F127D0064231B /* PostsViewController.m */; };
-		49063B931D4F39600064231B /* PostsAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B921D4F39600064231B /* PostsAnswersViewController.m */; };
 		49063B961D4F3BAA0064231B /* PostAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B951D4F3BAA0064231B /* PostAnswersTableViewCell.m */; };
+		49063B991D4F4A5B0064231B /* PostsAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */; };
 		49834E581D4EDBC0005117BB /* UserTrend.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E571D4EDBC0005117BB /* UserTrend.m */; };
 		49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E5D1D4EDCA7005117BB /* UserModel.m */; };
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
@@ -60,10 +60,10 @@
 		49063B8B1D4F0A310064231B /* PostsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsTableViewCell.m; path = View/PostsTableViewCell.m; sourceTree = "<group>"; };
 		49063B8E1D4F127D0064231B /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = Controller/PostsViewController.h; sourceTree = "<group>"; };
 		49063B8F1D4F127D0064231B /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = Controller/PostsViewController.m; sourceTree = "<group>"; };
-		49063B911D4F39600064231B /* PostsAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsAnswersViewController.h; sourceTree = "<group>"; };
-		49063B921D4F39600064231B /* PostsAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsAnswersViewController.m; sourceTree = "<group>"; };
 		49063B941D4F3BAA0064231B /* PostAnswersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostAnswersTableViewCell.h; path = View/PostAnswersTableViewCell.h; sourceTree = "<group>"; };
 		49063B951D4F3BAA0064231B /* PostAnswersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostAnswersTableViewCell.m; path = View/PostAnswersTableViewCell.m; sourceTree = "<group>"; };
+		49063B971D4F4A5B0064231B /* PostsAnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsAnswersViewController.h; path = Controller/PostsAnswersViewController.h; sourceTree = "<group>"; };
+		49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsAnswersViewController.m; path = Controller/PostsAnswersViewController.m; sourceTree = "<group>"; };
 		49834E561D4EDBC0005117BB /* UserTrend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTrend.h; path = Model/UserTrend.h; sourceTree = "<group>"; };
 		49834E571D4EDBC0005117BB /* UserTrend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTrend.m; path = Model/UserTrend.m; sourceTree = "<group>"; };
 		49834E5C1D4EDCA7005117BB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Model/UserModel.h; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 		49063B8D1D4F125C0064231B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49063B971D4F4A5B0064231B /* PostsAnswersViewController.h */,
+				49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */,
 				49063B8E1D4F127D0064231B /* PostsViewController.h */,
 				49063B8F1D4F127D0064231B /* PostsViewController.m */,
-				49063B911D4F39600064231B /* PostsAnswersViewController.h */,
-				49063B921D4F39600064231B /* PostsAnswersViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -528,10 +528,10 @@
 			files = (
 				49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */,
 				49063B961D4F3BAA0064231B /* PostAnswersTableViewCell.m in Sources */,
+				49063B991D4F4A5B0064231B /* PostsAnswersViewController.m in Sources */,
 				49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */,
 				49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */,
 				499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */,
-				49063B931D4F39600064231B /* PostsAnswersViewController.m in Sources */,
 				49DBD8AA1D4B58F40087A8D0 /* Post.m in Sources */,
 				49DBD8B01D4B5BC60087A8D0 /* UserDetail.m in Sources */,
 				49DBD8731D4B58550087A8D0 /* main.m in Sources */,

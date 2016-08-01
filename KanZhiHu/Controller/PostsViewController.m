@@ -17,6 +17,7 @@
 #import <Masonry/Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
 #import <MBProgressHUD.h>
+#import <TLYShyNavBar/TLYShyNavBarManager.h>
 
 @interface PostsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -41,6 +42,8 @@
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     [self.hud setRemoveFromSuperViewOnHide:NO];
     [self.hud hide:NO];
+    
+    self.shyNavBarManager.scrollView = self.tableView;
     
     NSLog(@"%s", __func__);
 }
