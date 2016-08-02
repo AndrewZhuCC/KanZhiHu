@@ -12,4 +12,5 @@
 
 @interface UserDetailViewController : UIViewController
 @property (strong, nonatomic) UserModel *entity;
+@property (copy, nonatomic) NSString *userHash;
 @end

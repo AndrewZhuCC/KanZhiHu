@@ -133,6 +133,7 @@
         [NetworkManager queryUserDetailWithUserHash:entity.authorhash success:^(UserModel *result) {
             UserDetailViewController *vc = UserDetailViewController.new;
             vc.entity = result;
+            vc.userHash = entity.authorhash;
             [sself.navigationController pushViewController:vc animated:YES];
         } fail:^(NSError *error, NSString *errorFromNet) {
             [sself.hud hide:YES];

@@ -17,6 +17,8 @@
 		49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E5D1D4EDCA7005117BB /* UserModel.m */; };
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
 		498EC5471D5040D60097C89E /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC5461D5040D60097C89E /* UserDetailViewController.m */; };
+		498EC54A1D5066310097C89E /* UserDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC5491D5066310097C89E /* UserDescTableViewCell.m */; };
+		498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */; };
 		4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 499585791D4EEF4300DAB88C /* NetworkManager.m */; };
 		499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */; };
 		49DBD8731D4B58550087A8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8721D4B58550087A8D0 /* main.m */; };
@@ -73,6 +75,10 @@
 		49834E601D4EDCC4005117BB /* UserTopAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTopAnswers.m; path = Model/UserTopAnswers.m; sourceTree = "<group>"; };
 		498EC5451D5040D60097C89E /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = Controller/UserDetailViewController.h; sourceTree = "<group>"; };
 		498EC5461D5040D60097C89E /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = Controller/UserDetailViewController.m; sourceTree = "<group>"; };
+		498EC5481D5066310097C89E /* UserDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDescTableViewCell.h; path = View/UserDescTableViewCell.h; sourceTree = "<group>"; };
+		498EC5491D5066310097C89E /* UserDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDescTableViewCell.m; path = View/UserDescTableViewCell.m; sourceTree = "<group>"; };
+		498EC54B1D5078260097C89E /* TopAnswersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopAnswersTableViewCell.h; sourceTree = "<group>"; };
+		498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopAnswersTableViewCell.m; sourceTree = "<group>"; };
 		499585781D4EEF4300DAB88C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		499585791D4EEF4300DAB88C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		4995857E1D4EF0FD00DAB88C /* GetPostsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostsResult.h; path = Model/GetPostsResult.h; sourceTree = "<group>"; };
@@ -150,6 +156,10 @@
 				49063B8B1D4F0A310064231B /* PostsTableViewCell.m */,
 				49063B941D4F3BAA0064231B /* PostAnswersTableViewCell.h */,
 				49063B951D4F3BAA0064231B /* PostAnswersTableViewCell.m */,
+				498EC5481D5066310097C89E /* UserDescTableViewCell.h */,
+				498EC5491D5066310097C89E /* UserDescTableViewCell.m */,
+				498EC54B1D5078260097C89E /* TopAnswersTableViewCell.h */,
+				498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -534,6 +544,7 @@
 				49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */,
 				49063B961D4F3BAA0064231B /* PostAnswersTableViewCell.m in Sources */,
 				49063B991D4F4A5B0064231B /* PostsAnswersViewController.m in Sources */,
+				498EC54A1D5066310097C89E /* UserDescTableViewCell.m in Sources */,
 				49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */,
 				498EC5471D5040D60097C89E /* UserDetailViewController.m in Sources */,
 				49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */,
@@ -543,6 +554,7 @@
 				49DBD8731D4B58550087A8D0 /* main.m in Sources */,
 				49063B8C1D4F0A310064231B /* PostsTableViewCell.m in Sources */,
 				49063B901D4F127D0064231B /* PostsViewController.m in Sources */,
+				498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */,
 				49834E581D4EDBC0005117BB /* UserTrend.m in Sources */,
 				49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */,
 				49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */,
