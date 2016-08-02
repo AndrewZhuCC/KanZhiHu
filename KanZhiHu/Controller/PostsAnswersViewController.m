@@ -11,9 +11,11 @@
 #import "Post.h"
 #import "NetworkManager.h"
 #import "PostAnswersTableViewCell.h"
+#import "UserDetailViewController.h"
 
 #import "GetPostAnswersResult.h"
 #import "PostAnswer.h"
+#import "UserModel.h"
 
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD.h>
@@ -114,8 +116,38 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     PostAnswersTableViewCell *myCell = (PostAnswersTableViewCell *)cell;
     [myCell configureCellWithEntity:[self.entitys objectForKey:self.keys[indexPath.section]][indexPath.row]];
+    
+    PostAnswer *entity = [self.entitys objectForKey:self.keys[indexPath.section]][indexPath.row];
+    __weak typeof(self) wself = self;
+    
+    [myCell setAvatarClick:^(PostAnswersTableViewCell *cell) {
+        typeof(wself) sself = wself;
+        sself.hud.mode = MBProgressHUDModeIndeterminate;
+        sself.hud.labelText = nil;
+        sself.hud.detailsLabelText = nil;
+        [sself.hud show:YES];
+        
+        [NetworkManager queryUserDetailWithUserHash:entity.authorhash success:^(UserModel *result) {
+            UserDetailViewController *vc = UserDetailViewController.new;
+            vc.entity = result;
+            [sself.navigationController pushViewController:vc animated:YES];
+        } fail:^(NSError *error, NSString *errorFromNet) {
+            [sself.hud hide:YES];
+            sself.hud.mode = MBProgressHUDModeText;
+            if (error) {
+                sself.hud.labelText = error.domain;
+                sself.hud.detailsLabelText = error.localizedDescription;
+            } else {
+                sself.hud.labelText = @"error";
+                sself.hud.detailsLabelText = errorFromNet;
+            }
+            [sself.hud show:YES];
+            [sself.hud hide:YES afterDelay:3];
+        }];
+    }];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -168,6 +200,11 @@
 #pragma mark -
 
 - (void)getEntitysFromKanZhiHu {
+    self.hud.mode = MBProgressHUDModeIndeterminate;
+    self.hud.labelText = nil;
+    self.hud.detailsLabelText = nil;
+    [self.hud show:YES];
+    
     __weak typeof(self) wself = self;
     self.task = [NetworkManager queryPostAnswersWithPost:self.post success:^(GetPostAnswersResult *result) {
         typeof(wself) sself = wself;

@@ -11,9 +11,11 @@
 @class GetPostsResult;
 @class GetPostAnswersResult;
 @class Post;
+@class UserModel;
 
 typedef void(^GetPostsSuccess)(GetPostsResult *result);
 typedef void(^GetPostAnswersSuccess)(GetPostAnswersResult *result);
+typedef void(^GetUserDetailSuccess)(UserModel *result);
 
 typedef void(^GetFail)(NSError *error, NSString *errorFromNet);
 
@@ -21,5 +23,6 @@ typedef void(^GetFail)(NSError *error, NSString *errorFromNet);
 
 + (NSURLSessionDataTask *)queryPostsWithSuccessBlock:(GetPostsSuccess)success fail:(GetFail)fail;
 + (NSURLSessionDataTask *)queryPostAnswersWithPost:(Post *)post success:(GetPostAnswersSuccess)success fail:(GetFail)fail;
++ (NSURLSessionDataTask *)queryUserDetailWithUserHash:(NSString *)hash success:(GetUserDetailSuccess)success fail:(GetFail)fail;
 
 @end

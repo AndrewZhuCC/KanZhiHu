@@ -20,6 +20,9 @@
 @property (strong, nonatomic) UIImageView *imgView;
 @property (strong, nonatomic) UILabel *lbName;
 @property (strong, nonatomic) UILabel *lbVote;
+@property (strong, nonatomic) UIButton *btnAvatar;
+
+@property (copy, nonatomic) AvatarClicked clickedBlock;
 
 @end
 
@@ -52,10 +55,14 @@
         _imgView = [[UIImageView alloc] initWithRoundingRectImageView];
         _imgView.contentMode = UIViewContentModeScaleToFill;
         
+        _btnAvatar = UIButton.new;
+        [_btnAvatar addTarget:self action:@selector(avatarClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
         [contentView addSubview:_imgView];
         [contentView addSubview:_lbSummary];
         [contentView addSubview:_lbVote];
         [contentView addSubview:_lbName];
+        [contentView addSubview:_btnAvatar];
     }
     return self;
 }
@@ -67,6 +74,7 @@
     self.lbVote.text = nil;
     self.lbSummary.text = nil;
     self.imgView.image = nil;
+    self.clickedBlock = nil;
     [super prepareForReuse];
 }
 
@@ -81,6 +89,13 @@
         make.left.equalTo(self.contentView).with.offset(5);
         make.centerY.equalTo(self.contentView).with.offset(-10);
         make.top.greaterThanOrEqualTo(self.contentView).with.offset(5);
+    }];
+    
+    [self.btnAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.imgView);
+        make.bottom.equalTo(self.lbName);
+        make.centerX.equalTo(self.imgView);
+        make.width.equalTo(self.imgView);
     }];
     
     [self.lbSummary mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -106,6 +121,12 @@
     [super updateConstraints];
 }
 
+- (void)avatarClicked:(UIButton *)button {
+    if (self.clickedBlock) {
+        self.clickedBlock(self);
+    }
+}
+
 #pragma mark - Public Methods
 
 - (void)configureCellWithEntity:(PostAnswer *)entity {
@@ -114,8 +135,12 @@
     self.lbSummary.text = entity.summary;
     NSURL *url = [NSURL URLWithString:entity.avatar];
     if (url) {
-        [self.imgView sd_setImageWithURL:url placeholderImage:nil];
+        [self.imgView sd_setImageWithURL:url];
     }
+}
+
+- (void)setAvatarClick:(AvatarClicked)block {
+    self.clickedBlock = block;
 }
 
 @end

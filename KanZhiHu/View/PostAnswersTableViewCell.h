@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class PostAnswer;
+@class PostAnswersTableViewCell;
+
+typedef void(^AvatarClicked)(PostAnswersTableViewCell *cell);
 
 @interface PostAnswersTableViewCell : UITableViewCell
 - (void)configureCellWithEntity:(PostAnswer *)entity;
+- (void)setAvatarClick:(AvatarClicked)block;
 @end

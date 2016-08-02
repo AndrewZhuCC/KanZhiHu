@@ -8,10 +8,12 @@
 
 #define URL_GETPOSTS @"http://api.kanzhihu.com/getposts"
 #define URL_GETPOSTANSWERS @"http://api.kanzhihu.com/getpostanswers"
+#define URL_GETUSERDETAIL @"http://api.kanzhihu.com/userdetail2"
 
 #import "NetworkManager.h"
 #import "GetPostsResult.h"
 #import "Post.h"
+#import "UserModel.h"
 
 #import "GetPostAnswersResult.h"
 #import "PostAnswer.h"
@@ -50,6 +52,23 @@
         fail(error, nil);
     }];
 }
+
++ (NSURLSessionDataTask *)queryUserDetailWithUserHash:(NSString *)hash success:(GetUserDetailSuccess)success fail:(GetFail)fail {
+    return [AFHTTPSessionManager.manager GET:[URL_GETUSERDETAIL stringByAppendingPathComponent:hash] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"error"] isEqualToString:@""]) {
+            UserModel *result = [UserModel yy_modelWithJSON:responseObject];
+            success(result);
+        } else {
+            NSString *error = [responseObject objectForKey:@"error"];
+            fail(nil, error);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        fail(error, nil);
+    }];
+}
+
+#pragma mark - Tools
 
 + (NSString *)getPostAnswersURLWithPost:(Post *)post {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
