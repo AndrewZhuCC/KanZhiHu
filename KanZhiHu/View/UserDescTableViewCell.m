@@ -24,6 +24,10 @@
 @property (strong, nonatomic) UIImageView *imgA;
 @property (strong, nonatomic) UIImageView *imgP;
 
+@property (strong, nonatomic) NSNumber *redBase;
+@property (strong, nonatomic) NSNumber *greenBase;
+@property (strong, nonatomic) NSNumber *blueBase;
+
 @end
 
 @implementation UserDescTableViewCell
@@ -31,38 +35,52 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         UIView *contentView = self.contentView;
-        contentView.backgroundColor = [UIColor colorWithRed:0.3 green:0.8 blue:0.5 alpha:1];
+//        contentView.backgroundColor = [UIColor colorWithRed:0.3 green:0.8 blue:0.5 alpha:1];
+        contentView.backgroundColor = [self userBackgroundColor];
         _avatar = UIImageView.new;
         [contentView addSubview:_avatar];
+        
         _lbSign = UILabel.new;
         _lbSign.numberOfLines = 0;
         _lbSign.textAlignment = NSTextAlignmentCenter;
-        _lbSign.layer.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.9 alpha:1].CGColor;
-        _lbSign.layer.cornerRadius = 6;
-        _lbSign.layer.masksToBounds = YES;
+        _lbSign.textColor = [self qapColor];
         [contentView addSubview:_lbSign];
+        
         _lbDesc = UILabel.new;
         _lbDesc.numberOfLines = 0;
-        _lbDesc.textColor = [UIColor lightTextColor];
+//        _lbDesc.textColor = [UIColor lightTextColor];
+        _lbDesc.textColor = [self descColor];
         _lbDesc.textAlignment = NSTextAlignmentCenter;
         [contentView addSubview:_lbDesc];
+        
         _lbNumQ = UILabel.new;
         _lbNumQ.numberOfLines = 0;
         _lbNumQ.textAlignment = NSTextAlignmentCenter;
+        _lbNumQ.textColor = [self qapColor];
         [contentView addSubview:_lbNumQ];
-        _imgQ = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"question"]];
+        
+        _imgQ = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"question"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _imgQ.tintColor = [self qapColor];
         [contentView addSubview:_imgQ];
+        
         _lbNumA = UILabel.new;
         _lbNumA.numberOfLines = 0;
         _lbNumA.textAlignment = NSTextAlignmentCenter;
+        _lbNumA.textColor = [self qapColor];
         [contentView addSubview:_lbNumA];
-        _imgA = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"answer"]];
+        
+        _imgA = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"answer"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _imgA.tintColor = [self qapColor];
         [contentView addSubview:_imgA];
+        
         _lbNumP = UILabel.new;
         _lbNumP.numberOfLines = 0;
         _lbNumP.textAlignment = NSTextAlignmentCenter;
+        _lbNumP.textColor = [self qapColor];
         [contentView addSubview:_lbNumP];
-        _imgP = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"post"]];
+        
+        _imgP = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"post"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _imgP.tintColor = [self qapColor];
         [contentView addSubview:_imgP];
     }
     return self;
@@ -131,6 +149,39 @@
         make.centerY.equalTo(self.lbNumP);
     }];
     [super updateConstraints];
+}
+
+- (NSNumber *)redBase {
+    if (!_redBase) {
+        _redBase = @(arc4random() % 255);
+    }
+    return _redBase;
+}
+
+- (NSNumber *)greenBase {
+    if (!_greenBase) {
+        _greenBase = @(arc4random() % 255);
+    }
+    return _greenBase;
+}
+
+- (NSNumber *)blueBase {
+    if (!_blueBase) {
+        _blueBase = @(arc4random() % 255);
+    }
+    return _blueBase;
+}
+
+- (UIColor *)userBackgroundColor {
+    return [UIColor colorWithRed:[self.redBase integerValue] / 255.0 green:[self.greenBase integerValue] / 255.0 blue:[self.blueBase integerValue] / 255.0 alpha:1.0];
+}
+
+- (UIColor *)qapColor {
+    return [UIColor colorWithRed:1.0 - [self.redBase integerValue] / 255.0 green:1.0 - [self.greenBase integerValue] / 255.0 blue:[self.blueBase integerValue] / 255.0 alpha:1.0];
+}
+
+- (UIColor *)descColor {
+    return [UIColor colorWithRed:1.0 - [self.redBase integerValue] / 255.0 green:1.0 - [self.greenBase integerValue] / 255.0 blue:1.0 - [self.blueBase integerValue] / 255.0 alpha:1.0];
 }
 
 #pragma mark - Public Methods

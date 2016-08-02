@@ -154,7 +154,12 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     PostAnswer *entity = [[self.entitys objectForKey:self.keys[section]] firstObject];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    view.backgroundColor = [UIColor colorWithRed:0.3 green:0.7 blue:1 alpha:1];
+    view.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.5 alpha:1].CGColor;
+    view.layer.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:1 alpha:1.0].CGColor;
+    view.layer.borderWidth = 2;
+    view.layer.cornerRadius = 8;
+    view.layer.masksToBounds = YES;
+    
     UILabel *title = UILabel.new;
     title.textColor = [UIColor blackColor];
     title.backgroundColor = [UIColor clearColor];

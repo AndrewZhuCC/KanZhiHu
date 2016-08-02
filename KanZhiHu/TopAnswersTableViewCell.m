@@ -25,7 +25,8 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor = [UIColor orangeColor];
+        self.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"orange"]];
+        self.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.7];
         _lbTitle = UILabel.new;
         _lbTitle.numberOfLines = 0;
         

@@ -17,9 +17,10 @@
 @interface PostAnswersTableViewCell ()
 
 @property (strong, nonatomic) UILabel *lbSummary;
-@property (strong, nonatomic) UIImageView *imgView;
 @property (strong, nonatomic) UILabel *lbName;
 @property (strong, nonatomic) UILabel *lbVote;
+@property (strong, nonatomic) UIImageView *imgView;
+@property (strong, nonatomic) UIImageView *imgVote;
 @property (strong, nonatomic) UIButton *btnAvatar;
 
 @property (copy, nonatomic) AvatarClicked clickedBlock;
@@ -31,12 +32,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         UIView *contentView = self.contentView;
-        contentView.backgroundColor = [UIColor clearColor];
+        contentView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.0];
         self.backgroundColor = [UIColor clearColor];
         
         _lbVote = UILabel.new;
         [_lbVote setBackgroundColor:[UIColor clearColor]];
-        [_lbVote setTextColor:[UIColor lightGrayColor]];
+        [_lbVote setTextColor:[UIColor blackColor]];
         [_lbVote setTextAlignment:NSTextAlignmentRight];
         [_lbVote setFont:[UIFont systemFontOfSize:15]];
         
@@ -55,6 +56,8 @@
         _imgView = [[UIImageView alloc] initWithRoundingRectImageView];
         _imgView.contentMode = UIViewContentModeScaleToFill;
         
+        _imgVote = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"thumb"]];
+        
         _btnAvatar = UIButton.new;
         [_btnAvatar addTarget:self action:@selector(avatarClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -63,6 +66,7 @@
         [contentView addSubview:_lbVote];
         [contentView addSubview:_lbName];
         [contentView addSubview:_btnAvatar];
+        [contentView addSubview:_imgVote];
     }
     return self;
 }
@@ -116,6 +120,12 @@
         make.height.mas_equalTo(15);
         make.bottom.equalTo(self.contentView).with.offset(-5);
         make.right.equalTo(self.contentView).with.offset(-5);
+    }];
+    
+    [self.imgVote mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(15, 15));
+        make.centerY.equalTo(self.lbVote);
+        make.right.equalTo(self.lbVote.mas_left).with.offset(-1);
     }];
     
     [super updateConstraints];
