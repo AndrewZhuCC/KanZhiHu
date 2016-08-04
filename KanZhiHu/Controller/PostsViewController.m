@@ -19,6 +19,7 @@
 #import <UITableView+FDTemplateLayoutCell.h>
 #import <MBProgressHUD.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
+#import <MJRefresh.h>
 
 @interface PostsViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -65,6 +66,8 @@
     self.searchResultViewController.view.hidden = YES;
     UISearchBar *searchBar = UISearchBar.new;
     searchBar.delegate = self;
+    [searchBar setImage:[[UIImage imageNamed:@"cancel"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
+    searchBar.tintColor = [UIColor lightGrayColor];
     self.navigationItem.titleView = searchBar;
     
     NSLog(@"%s", __func__);
@@ -93,22 +96,16 @@
     }
     
     [self.hud hide:NO];
+    [self.tableView.mj_header endRefreshing];
     NSLog(@"%s", __func__);
 }
 
 #pragma mark - Search Bar
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"%s", __func__);
-    [searchBar endEditing:YES];
-    [self.searchResultViewController searchUsersWithKeyword:searchBar.text];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"%s", __func__);
+- (void)searchBarCancel:(UISearchBar *)searchBar {
     self.searching = NO;
     [searchBar endEditing:YES];
-    [searchBar setShowsCancelButton:NO animated:YES];
+    searchBar.showsBookmarkButton = NO;
     searchBar.text = nil;
     [UIView transitionFromView:self.searchResultViewController.view toView:self.tableView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
         if (finished) {
@@ -117,12 +114,43 @@
     }];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%s", __func__);
+    [searchBar endEditing:YES];
+    [self.searchResultViewController searchUsersWithKeyword:searchBar.text];
+}
+
+- (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar {
+    [self searchBarCancel:searchBar];
+    NSLog(@"%s", __func__);
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
+    [[self.view viewWithTag:225] removeFromSuperview];
+    if (searchBar.text.length == 0) {
+        [self searchBarCancel:searchBar];
+    }
+    return YES;
+}
+
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     NSLog(@"%s", __func__);
     self.searching = YES;
-    [searchBar setShowsCancelButton:YES animated:YES];
-    [UIView transitionFromView:self.tableView toView:self.searchResultViewController.view duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:nil];
+    searchBar.showsBookmarkButton = YES;
+    UIButton *backButton = [[UIButton alloc] initWithFrame:self.view.bounds];
+    [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    backButton.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
+    backButton.tag = 225;
+    backButton.alpha = 0;
+    [self.view addSubview:backButton];
+    [UIView transitionFromView:self.tableView toView:self.searchResultViewController.view duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+    }];
+    backButton.alpha = 1;
     return YES;
+}
+
+- (void)backButtonTapped:(UIButton *)button {
+    [self.navigationItem.titleView endEditing:NO];
 }
 
 #pragma mark -
@@ -136,6 +164,8 @@
     [self.view addSubview:self.tableView];
     
     [self.tableView registerClass:PostsTableViewCell.class forCellReuseIdentifier:NSStringFromClass(PostsTableViewCell.class)];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getEntitysFromKanZhiHu)];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -199,12 +229,14 @@
     self.task = [NetworkManager queryPostsWithSuccessBlock:^(GetPostsResult *result) {
         typeof(wself) sself = wself;
         [sself.hud hide:YES];
+        [sself.tableView.mj_header endRefreshing];
         sself.result = result;
         sself.entitys = result.posts;
         [sself.tableView reloadData];
     } fail:^(NSError *error, NSString *errorFromNet) {
         typeof(wself) sself = wself;
-        [sself.hud hide:YES];
+        [sself.hud hide:NO];
+        [sself.tableView.mj_header endRefreshing];
         sself.entitys = NSArray.new;
         sself.result = nil;
         [sself.tableView reloadData];

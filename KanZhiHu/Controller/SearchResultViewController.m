@@ -138,7 +138,7 @@
         [sself.tableView reloadData];
     } fail:^(NSError *error, NSString *errorFromNet) {
         typeof(wself) sself = wself;
-        [sself.hud hide:YES];
+        [sself.hud hide:NO];
         self.searchResult = nil;
         self.searchEntitys = nil;
         if (error) {

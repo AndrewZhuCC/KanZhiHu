@@ -21,6 +21,7 @@
 #import <MBProgressHUD.h>
 #import <UITableView+FDTemplateLayoutCell.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
+#import <MJRefresh.h>
 
 #define ZHIHU_URL @"https://www.zhihu.com/question"
 #define ZHIHU_APP_URL @"zhihu://"
@@ -78,6 +79,7 @@
     }
     
     [self.hud hide:NO];
+    [self.tableView.mj_header endRefreshing];
     NSLog(@"%s", __func__);
 }
 
@@ -97,6 +99,8 @@
     [self.view addSubview:self.tableView];
     
     [self.tableView registerClass:PostAnswersTableViewCell.class forCellReuseIdentifier:NSStringFromClass(PostAnswersTableViewCell.class)];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getEntitysFromKanZhiHu)];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -136,7 +140,8 @@
             vc.userHash = entity.authorhash;
             [sself.navigationController pushViewController:vc animated:YES];
         } fail:^(NSError *error, NSString *errorFromNet) {
-            [sself.hud hide:YES];
+            [sself.tableView.mj_header endRefreshing];
+            [sself.hud hide:NO];
             sself.hud.mode = MBProgressHUDModeText;
             if (error) {
                 sself.hud.labelText = error.domain;
@@ -215,12 +220,14 @@
     self.task = [NetworkManager queryPostAnswersWithPost:self.post success:^(GetPostAnswersResult *result) {
         typeof(wself) sself = wself;
         [sself.hud hide:YES];
+        [sself.tableView.mj_header endRefreshing];
         sself.result = result;
         [sself calEntitysWithResult:result];
         [sself.tableView reloadData];
     } fail:^(NSError *error, NSString *errorFromNet) {
         typeof(wself) sself = wself;
-        [sself.hud hide:YES];
+        [sself.hud hide:NO];
+        [sself.tableView.mj_header endRefreshing];
         sself.entitys = NSDictionary.new;
         sself.keys = NSArray.new;
         sself.result = nil;
