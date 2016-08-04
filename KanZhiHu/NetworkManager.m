@@ -9,6 +9,7 @@
 #define URL_GETPOSTS @"http://api.kanzhihu.com/getposts"
 #define URL_GETPOSTANSWERS @"http://api.kanzhihu.com/getpostanswers"
 #define URL_GETUSERDETAIL @"http://api.kanzhihu.com/userdetail2"
+#define URL_SEARCHUSER @"http://api.kanzhihu.com/searchuser"
 
 #import "NetworkManager.h"
 #import "GetPostsResult.h"
@@ -17,6 +18,7 @@
 
 #import "GetPostAnswersResult.h"
 #import "PostAnswer.h"
+#import "SearchUserResult.h"
 
 #import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
@@ -58,6 +60,21 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([[responseObject objectForKey:@"error"] isEqualToString:@""]) {
             UserModel *result = [UserModel yy_modelWithJSON:responseObject];
+            success(result);
+        } else {
+            NSString *error = [responseObject objectForKey:@"error"];
+            fail(nil, error);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        fail(error, nil);
+    }];
+}
+
++ (NSURLSessionDataTask *)searchUserWithWord:(NSString *)word success:(SearchUserSuccess)success fail:(GetFail)fail {
+    return [AFHTTPSessionManager.manager GET:[URL_SEARCHUSER stringByAppendingPathComponent:[word stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"error"] isEqualToString:@""]) {
+            SearchUserResult *result = [SearchUserResult yy_modelWithJSON:responseObject];
             success(result);
         } else {
             NSString *error = [responseObject objectForKey:@"error"];

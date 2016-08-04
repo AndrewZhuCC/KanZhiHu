@@ -13,20 +13,26 @@
 #import "NetworkManager.h"
 #import "PostsTableViewCell.h"
 #import "PostsAnswersViewController.h"
+#import "SearchResultViewController.h"
 
 #import <Masonry/Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
 #import <MBProgressHUD.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
-@interface PostsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface PostsViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) MBProgressHUD *hud;
 
 @property (copy, nonatomic) NSArray<Post *> *entitys;
 @property (strong, nonatomic) GetPostsResult *result;
+
 @property (strong, nonatomic) NSURLSessionDataTask *task;
+
+@property (strong, nonatomic) SearchResultViewController *searchResultViewController;
+@property (assign, nonatomic) BOOL searching;
+
 
 @end
 
@@ -45,10 +51,21 @@
     
     self.shyNavBarManager.scrollView = self.tableView;
     
+    
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     
     self.title = @"Today";
+    
+    self.searchResultViewController = SearchResultViewController.new;
+    [self.view addSubview:self.searchResultViewController.view];
+    [self.searchResultViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).with.mas_offset(UIEdgeInsetsMake(64, 0, 0, 0));
+    }];
+    self.searchResultViewController.view.hidden = YES;
+    UISearchBar *searchBar = UISearchBar.new;
+    searchBar.delegate = self;
+    self.navigationItem.titleView = searchBar;
     
     NSLog(@"%s", __func__);
 }
@@ -79,7 +96,36 @@
     NSLog(@"%s", __func__);
 }
 
-#pragma mark - 
+#pragma mark - Search Bar
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%s", __func__);
+    [searchBar endEditing:YES];
+    [self.searchResultViewController searchUsersWithKeyword:searchBar.text];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%s", __func__);
+    self.searching = NO;
+    [searchBar endEditing:YES];
+    [searchBar setShowsCancelButton:NO animated:YES];
+    searchBar.text = nil;
+    [UIView transitionFromView:self.searchResultViewController.view toView:self.tableView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+        if (finished) {
+            [self.searchResultViewController viewDidDisappear:YES];
+        }
+    }];
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    NSLog(@"%s", __func__);
+    self.searching = YES;
+    [searchBar setShowsCancelButton:YES animated:YES];
+    [UIView transitionFromView:self.tableView toView:self.searchResultViewController.view duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:nil];
+    return YES;
+}
+
+#pragma mark -
 
 - (void)configureTableView {
     _tableView = UITableView.new;
@@ -131,11 +177,23 @@
 
 #pragma mark -
 
-- (void)getEntitysFromKanZhiHu {
+- (void)showHud {
     self.hud.mode = MBProgressHUDModeIndeterminate;
     self.hud.labelText = nil;
     self.hud.detailsLabelText = nil;
     [self.hud show:YES];
+}
+
+- (void)showHudWithTitle:(NSString *)title message:(NSString *)message {
+    self.hud.mode = MBProgressHUDModeText;
+    self.hud.labelText = title;
+    self.hud.detailsLabelText = message;
+    [self.hud show:YES];
+    [self.hud hide:YES afterDelay:3];
+}
+
+- (void)getEntitysFromKanZhiHu {
+    [self showHud];
     
     __weak typeof(self) wself = self;
     self.task = [NetworkManager queryPostsWithSuccessBlock:^(GetPostsResult *result) {
@@ -152,11 +210,7 @@
         [sself.tableView reloadData];
         if (error) {
             if (error.code != -999) {
-                sself.hud.mode = MBProgressHUDModeText;
-                sself.hud.labelText = error.domain;
-                sself.hud.detailsLabelText = error.localizedDescription;
-                [sself.hud show:YES];
-                [sself.hud hide:YES afterDelay:3];
+                [sself showHudWithTitle:error.domain message:error.localizedDescription];
             }
         }
     }];
