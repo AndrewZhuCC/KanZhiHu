@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchResultViewController : UIViewController
+@property (weak, nonatomic) UINavigationController *navToPushUserVC;
 - (void)searchUsersWithKeyword:(NSString *)word;
 @end

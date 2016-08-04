@@ -59,6 +59,7 @@
     self.title = @"Today";
     
     self.searchResultViewController = SearchResultViewController.new;
+    self.searchResultViewController.navToPushUserVC = self.navigationController;
     [self.view addSubview:self.searchResultViewController.view];
     [self.searchResultViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.mas_offset(UIEdgeInsetsMake(64, 0, 0, 0));
@@ -97,6 +98,7 @@
     
     [self.hud hide:NO];
     [self.tableView.mj_header endRefreshing];
+    [self.navigationItem.titleView endEditing:YES];
     NSLog(@"%s", __func__);
 }
 

@@ -11,6 +11,7 @@
 #import "NetworkManager.h"
 #import "SearchUserResult.h"
 #import "SearchUserTableViewCell.h"
+#import "UserDetailViewController.h"
 
 #import <Masonry/Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
@@ -107,6 +108,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self showHud];
+    
+    NSString *userHash = self.searchEntitys[indexPath.row].userHash;
+        
+    [NetworkManager queryUserDetailWithUserHash:userHash success:^(UserModel *result) {
+        UserDetailViewController *vc = UserDetailViewController.new;
+        vc.entity = result;
+        vc.userHash = userHash;
+        [self.navToPushUserVC pushViewController:vc animated:YES];
+    } fail:^(NSError *error, NSString *errorFromNet) {
+        [self.hud hide:NO];
+        if (error) {
+            [self showHudWithTitle:error.domain message:error.localizedDescription];
+        } else {
+            [self showHudWithTitle:@"error" message:errorFromNet];
+        }
+    }];
 }
 
 #pragma mark -
@@ -145,6 +164,8 @@
             if (error.code != -999) {
                 [sself showHudWithTitle:error.domain message:error.localizedDescription];
             }
+        } else {
+            [sself showHudWithTitle:@"Error" message:errorFromNet];
         }
     }];
 }

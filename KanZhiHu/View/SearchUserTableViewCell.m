@@ -71,12 +71,12 @@
     }];
     [self.lbSign mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView).with.offset(-10);
-        make.left.equalTo(self.avatar.mas_right).with.offset(5);
+        make.left.equalTo(self.avatar.mas_right).with.offset(25);
         make.right.equalTo(self.contentView).with.offset(-8);
         make.top.greaterThanOrEqualTo(self.contentView).with.offset(8);
     }];
     [self.labelAnswer mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.lbSign.mas_bottom).with.offset(5);
+        make.top.equalTo(self.lbSign.mas_bottom).with.offset(15);
         make.bottom.lessThanOrEqualTo(self.contentView).with.offset(-8);
         make.height.mas_equalTo(20);
         make.right.equalTo(self.labelAgree.mas_left).with.offset(-15);
