@@ -14,6 +14,7 @@
 #import "PostsTableViewCell.h"
 #import "PostsAnswersViewController.h"
 #import "SearchResultViewController.h"
+#import "SettingsViewController.h"
 
 #import <Masonry/Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
@@ -34,6 +35,7 @@
 @property (strong, nonatomic) SearchResultViewController *searchResultViewController;
 @property (assign, nonatomic) BOOL searching;
 
+@property (strong, nonatomic) UIPanGestureRecognizer *swipeGR;
 
 @end
 
@@ -71,12 +73,23 @@
     searchBar.tintColor = [UIColor lightGrayColor];
     self.navigationItem.titleView = searchBar;
     
+    self.swipeGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGRReconized:)];
+    [self.view addGestureRecognizer:self.swipeGR];
+    
     NSLog(@"%s", __func__);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)swipeGRReconized:(UIPanGestureRecognizer *)gr {
+    if (gr.state == UIGestureRecognizerStateBegan) {
+        SettingsViewController *vc = SettingsViewController.new;
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -12,6 +12,7 @@
 #import "NetworkManager.h"
 #import "PostAnswersTableViewCell.h"
 #import "UserDetailViewController.h"
+#import "WebViewController.h"
 
 #import "GetPostAnswersResult.h"
 #import "PostAnswer.h"
@@ -199,12 +200,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PostAnswer *entity = [self.entitys objectForKey:self.keys[indexPath.section]][indexPath.row];
-    NSString *zhihuAnswerURLS = [NSString stringWithFormat:@"%@answers/%@", ZHIHU_APP_URL, entity.answerid];
-//    NSString *zhihuapp = [ZHIHU_APP_URL stringByAppendingPathComponent:entity.answerid];
-    NSURL *url = [NSURL URLWithString:zhihuAnswerURLS];
-    NSLog(@"%@", url);
-    if (url) {
-        [UIApplication.sharedApplication openURL:url];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"jumpToZhiHu"]) {
+        NSString *zhihuAnswerURLS = [NSString stringWithFormat:@"%@answers/%@", ZHIHU_APP_URL, entity.answerid];
+        //    NSString *zhihuapp = [ZHIHU_APP_URL stringByAppendingPathComponent:entity.answerid];
+        NSURL *url = [NSURL URLWithString:zhihuAnswerURLS];
+        NSLog(@"%@", url);
+        if (url) {
+            [UIApplication.sharedApplication openURL:url];
+        }
+    } else {
+        WebViewController *webVC = WebViewController.new;
+        NSString *webUrlS = [NSString stringWithFormat:@"https://www.zhihu.com/question/%@/answer/%@", entity.questionid, entity.answerid];
+        NSURL *url = [NSURL URLWithString:webUrlS];
+        if (url) {
+            webVC.urlToLoad = url;
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
     }
 }
 

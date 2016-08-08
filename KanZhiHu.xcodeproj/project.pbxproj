@@ -26,6 +26,9 @@
 		498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */; };
 		4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 499585791D4EEF4300DAB88C /* NetworkManager.m */; };
 		499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */; };
+		49BEF91F1D533FF800956038 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF91E1D533FF800956038 /* WebViewController.m */; };
+		49BEF9231D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */; };
+		49BEF9261D5344BA00956038 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9251D5344BA00956038 /* SettingsViewController.m */; };
 		49DBD8731D4B58550087A8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8721D4B58550087A8D0 /* main.m */; };
 		49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8751D4B58550087A8D0 /* AppDelegate.m */; };
 		49DBD87E1D4B58550087A8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBD87D1D4B58550087A8D0 /* Assets.xcassets */; };
@@ -98,6 +101,12 @@
 		499585791D4EEF4300DAB88C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		4995857E1D4EF0FD00DAB88C /* GetPostsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostsResult.h; path = Model/GetPostsResult.h; sourceTree = "<group>"; };
 		4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPostsResult.m; path = Model/GetPostsResult.m; sourceTree = "<group>"; };
+		49BEF91D1D533FF800956038 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controller/WebViewController.h; sourceTree = "<group>"; };
+		49BEF91E1D533FF800956038 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controller/WebViewController.m; sourceTree = "<group>"; };
+		49BEF9211D5340FF00956038 /* UINavigationController+M13ProgressViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+M13ProgressViewBar.h"; sourceTree = "<group>"; };
+		49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+M13ProgressViewBar.m"; sourceTree = "<group>"; };
+		49BEF9241D5344BA00956038 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controller/SettingsViewController.h; sourceTree = "<group>"; };
+		49BEF9251D5344BA00956038 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controller/SettingsViewController.m; sourceTree = "<group>"; };
 		49DBD86E1D4B58550087A8D0 /* KanZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBD8721D4B58550087A8D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DBD8741D4B58550087A8D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -186,6 +195,7 @@
 		49063B8D1D4F125C0064231B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49BEF9201D5340FF00956038 /* NavigationController */,
 				49063B8E1D4F127D0064231B /* PostsViewController.h */,
 				49063B8F1D4F127D0064231B /* PostsViewController.m */,
 				49057EB31D51ECF200CB7A08 /* SearchResultViewController.h */,
@@ -194,8 +204,22 @@
 				49063B981D4F4A5B0064231B /* PostsAnswersViewController.m */,
 				498EC5451D5040D60097C89E /* UserDetailViewController.h */,
 				498EC5461D5040D60097C89E /* UserDetailViewController.m */,
+				49BEF91D1D533FF800956038 /* WebViewController.h */,
+				49BEF91E1D533FF800956038 /* WebViewController.m */,
+				49BEF9241D5344BA00956038 /* SettingsViewController.h */,
+				49BEF9251D5344BA00956038 /* SettingsViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		49BEF9201D5340FF00956038 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				49BEF9211D5340FF00956038 /* UINavigationController+M13ProgressViewBar.h */,
+				49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */,
+			);
+			name = NavigationController;
+			path = Controller/NavigationController;
 			sourceTree = "<group>";
 		};
 		49DBD8651D4B58550087A8D0 = {
@@ -569,12 +593,14 @@
 				49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */,
 				49057EAF1D51CF6C00CB7A08 /* SearchUserResult.m in Sources */,
 				49063B961D4F3BAA0064231B /* PostAnswersTableViewCell.m in Sources */,
+				49BEF9261D5344BA00956038 /* SettingsViewController.m in Sources */,
 				49063B991D4F4A5B0064231B /* PostsAnswersViewController.m in Sources */,
 				498EC54A1D5066310097C89E /* UserDescTableViewCell.m in Sources */,
 				49057EB21D51D21800CB7A08 /* LabelWithThumb.m in Sources */,
 				49057EAC1D51CE6400CB7A08 /* SearchUserModel.m in Sources */,
 				49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */,
 				498EC5471D5040D60097C89E /* UserDetailViewController.m in Sources */,
+				49BEF9231D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m in Sources */,
 				49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */,
 				499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */,
 				49057EB51D51ECF200CB7A08 /* SearchResultViewController.m in Sources */,
@@ -587,6 +613,7 @@
 				498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */,
 				49834E581D4EDBC0005117BB /* UserTrend.m in Sources */,
 				49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */,
+				49BEF91F1D533FF800956038 /* WebViewController.m in Sources */,
 				49063B871D4EF6960064231B /* GetPostAnswersResult.m in Sources */,
 				4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */,
 				49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */,

@@ -10,6 +10,7 @@
 #import "UserDescTableViewCell.h"
 #import "TopAnswersTableViewCell.h"
 #import "UserModel.h"
+#import "WebViewController.h"
 
 #import <Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -97,36 +98,56 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSURL *url = nil;
+    BOOL jump = [[NSUserDefaults standardUserDefaults] boolForKey:@"jumpToZhiHu"];
     if (indexPath.section == 1) {
         NSString *answerUrl = self.entity.topanswers[indexPath.row].link;
         if (self.entity.topanswers[indexPath.row].ispost) {
-            NSRange answerRange = NSMakeRange(3, answerUrl.length - 3);
-            if (answerRange.length + answerRange.location > answerUrl.length) {
-                answerUrl = nil;
+            if (jump) {
+                NSRange answerRange = NSMakeRange(3, answerUrl.length - 3);
+                if (answerRange.length + answerRange.location > answerUrl.length) {
+                    answerUrl = nil;
+                } else {
+                    answerUrl = [answerUrl substringWithRange:answerRange];
+                    answerUrl = [NSString stringWithFormat:@"zhihu://zhuanlan/%@", answerUrl];
+                }
             } else {
-                answerUrl = [answerUrl substringWithRange:answerRange];
-                answerUrl = [NSString stringWithFormat:@"zhihu://zhuanlan/%@", answerUrl];
+                answerUrl = [NSString stringWithFormat:@"https://zhuanlan.zhihu.com%@", answerUrl];
             }
         } else {
-            NSRange answerRange = [answerUrl rangeOfString:@"answer"];
-            if (answerRange.location != NSNotFound) {
-                answerRange.length = answerUrl.length - answerRange.location - 6;
-                answerRange.location += 6;
-                answerUrl = [answerUrl substringWithRange:answerRange];
-                answerUrl = [NSString stringWithFormat:@"zhihu://answers%@", answerUrl];
+            if (jump) {
+                NSRange answerRange = [answerUrl rangeOfString:@"answer"];
+                if (answerRange.location != NSNotFound) {
+                    answerRange.length = answerUrl.length - answerRange.location - 6;
+                    answerRange.location += 6;
+                    answerUrl = [answerUrl substringWithRange:answerRange];
+                    answerUrl = [NSString stringWithFormat:@"zhihu://answers%@", answerUrl];
+                } else {
+                    answerUrl = nil;
+                }
             } else {
-                answerUrl = nil;
+                answerUrl = [NSString stringWithFormat:@"https://www.zhihu.com%@", answerUrl];
             }
         }
         url = [NSURL URLWithString:answerUrl];
     } else {
         if (self.userHash.length > 0) {
-            NSString *peopleUrl = [NSString stringWithFormat:@"zhihu://people/%@", self.userHash];
-            url = [NSURL URLWithString:peopleUrl];
+            if (jump) {
+                NSString *peopleUrl = [NSString stringWithFormat:@"zhihu://people/%@", self.userHash];
+                url = [NSURL URLWithString:peopleUrl];
+            } else {
+                NSString *peopleUrl = [NSString stringWithFormat:@"https://www.zhihu.com/people/%@", self.userHash];
+                url = [NSURL URLWithString:peopleUrl];
+            }
         }
     }
     if (url) {
-        [UIApplication.sharedApplication openURL:url];
+        if (jump) {
+            [UIApplication.sharedApplication openURL:url];
+        } else {
+            WebViewController *webVC = WebViewController.new;
+            webVC.urlToLoad = url;
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
     }
 }
 
