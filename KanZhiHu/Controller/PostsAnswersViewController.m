@@ -173,9 +173,19 @@
     title.numberOfLines = 0;
     [view addSubview:title];
     
+    UIButton *backButton = UIButton.new;
+    backButton.tag = section;
+    [backButton addTarget:self action:@selector(tableViewHeaderTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:backButton];
+    
     [title mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(view).with.insets(UIEdgeInsetsMake(5, 5, 5, 5));
     }];
+    
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(view);
+    }];
+    
     return view;
 }
 
@@ -211,6 +221,27 @@
     } else {
         WebViewController *webVC = WebViewController.new;
         NSString *webUrlS = [NSString stringWithFormat:@"https://www.zhihu.com/question/%@/answer/%@", entity.questionid, entity.answerid];
+        NSURL *url = [NSURL URLWithString:webUrlS];
+        if (url) {
+            webVC.urlToLoad = url;
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
+    }
+}
+
+- (void)tableViewHeaderTapped:(UIButton *)button {
+    PostAnswer *entity = [self.entitys objectForKey:self.keys[button.tag]][0];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"jumpToZhiHu"]) {
+        NSString *zhihuAnswerURLS = [NSString stringWithFormat:@"%@questions/%@", ZHIHU_APP_URL, entity.questionid];
+        //    NSString *zhihuapp = [ZHIHU_APP_URL stringByAppendingPathComponent:entity.answerid];
+        NSURL *url = [NSURL URLWithString:zhihuAnswerURLS];
+        NSLog(@"%@", url);
+        if (url) {
+            [UIApplication.sharedApplication openURL:url];
+        }
+    } else {
+        WebViewController *webVC = WebViewController.new;
+        NSString *webUrlS = [NSString stringWithFormat:@"https://www.zhihu.com/question/%@", entity.questionid];
         NSURL *url = [NSURL URLWithString:webUrlS];
         if (url) {
             webVC.urlToLoad = url;
