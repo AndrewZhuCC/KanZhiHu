@@ -33,8 +33,8 @@
     UINavigationController *postsNVC = [[UINavigationController alloc] initWithRootViewController:postsVC];
     SettingsViewController *settingVC = SettingsViewController.new;
     UINavigationController *settingNVC = [[UINavigationController alloc] initWithRootViewController:settingVC];
-    UITabBarItem *postsItem = [[UITabBarItem alloc] initWithTitle:@"Posts" image:[UIImage imageNamed:@"news"] tag:0];
-    UITabBarItem *settingItem = [[UITabBarItem alloc] initWithTitle:@"Setting" image:[UIImage imageNamed:@"setting"] tag:1];
+    UITabBarItem *postsItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"news"] tag:0];
+    UITabBarItem *settingItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"setting"] tag:1];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
     postsNVC.tabBarItem = postsItem;
     settingNVC.tabBarItem = settingItem;
