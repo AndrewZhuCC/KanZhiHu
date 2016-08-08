@@ -23,13 +23,13 @@
 		49834E611D4EDCC4005117BB /* UserTopAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = 49834E601D4EDCC4005117BB /* UserTopAnswers.m */; };
 		498EC5471D5040D60097C89E /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC5461D5040D60097C89E /* UserDetailViewController.m */; };
 		498EC54A1D5066310097C89E /* UserDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC5491D5066310097C89E /* UserDescTableViewCell.m */; };
-		498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */; };
 		4995857A1D4EEF4300DAB88C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 499585791D4EEF4300DAB88C /* NetworkManager.m */; };
 		499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995857F1D4EF0FE00DAB88C /* GetPostsResult.m */; };
 		49BEF91F1D533FF800956038 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF91E1D533FF800956038 /* WebViewController.m */; };
 		49BEF9231D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */; };
 		49BEF9261D5344BA00956038 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9251D5344BA00956038 /* SettingsViewController.m */; };
 		49BEF9291D586A0700956038 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9281D586A0700956038 /* MainTabViewController.m */; };
+		49BEF92C1D5872F300956038 /* TopAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF92B1D5872F300956038 /* TopAnswersTableViewCell.m */; };
 		49DBD8731D4B58550087A8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8721D4B58550087A8D0 /* main.m */; };
 		49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8751D4B58550087A8D0 /* AppDelegate.m */; };
 		49DBD87E1D4B58550087A8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBD87D1D4B58550087A8D0 /* Assets.xcassets */; };
@@ -96,8 +96,6 @@
 		498EC5461D5040D60097C89E /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = Controller/UserDetailViewController.m; sourceTree = "<group>"; };
 		498EC5481D5066310097C89E /* UserDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDescTableViewCell.h; path = View/UserDescTableViewCell.h; sourceTree = "<group>"; };
 		498EC5491D5066310097C89E /* UserDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDescTableViewCell.m; path = View/UserDescTableViewCell.m; sourceTree = "<group>"; };
-		498EC54B1D5078260097C89E /* TopAnswersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopAnswersTableViewCell.h; sourceTree = "<group>"; };
-		498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopAnswersTableViewCell.m; sourceTree = "<group>"; };
 		499585781D4EEF4300DAB88C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		499585791D4EEF4300DAB88C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		4995857E1D4EF0FD00DAB88C /* GetPostsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPostsResult.h; path = Model/GetPostsResult.h; sourceTree = "<group>"; };
@@ -110,6 +108,8 @@
 		49BEF9251D5344BA00956038 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controller/SettingsViewController.m; sourceTree = "<group>"; };
 		49BEF9271D586A0700956038 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabViewController.h; path = Controller/MainTabViewController.h; sourceTree = "<group>"; };
 		49BEF9281D586A0700956038 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabViewController.m; path = Controller/MainTabViewController.m; sourceTree = "<group>"; };
+		49BEF92A1D5872F300956038 /* TopAnswersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopAnswersTableViewCell.h; path = View/TopAnswersTableViewCell.h; sourceTree = "<group>"; };
+		49BEF92B1D5872F300956038 /* TopAnswersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopAnswersTableViewCell.m; path = View/TopAnswersTableViewCell.m; sourceTree = "<group>"; };
 		49DBD86E1D4B58550087A8D0 /* KanZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBD8721D4B58550087A8D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DBD8741D4B58550087A8D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 				49063B951D4F3BAA0064231B /* PostAnswersTableViewCell.m */,
 				498EC5481D5066310097C89E /* UserDescTableViewCell.h */,
 				498EC5491D5066310097C89E /* UserDescTableViewCell.m */,
-				498EC54B1D5078260097C89E /* TopAnswersTableViewCell.h */,
-				498EC54C1D5078260097C89E /* TopAnswersTableViewCell.m */,
+				49BEF92A1D5872F300956038 /* TopAnswersTableViewCell.h */,
+				49BEF92B1D5872F300956038 /* TopAnswersTableViewCell.m */,
 				49057EA71D51CE0E00CB7A08 /* SearchUserTableViewCell.h */,
 				49057EA81D51CE0E00CB7A08 /* SearchUserTableViewCell.m */,
 			);
@@ -596,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DBD8B31D4B5DDE0087A8D0 /* UserStar.m in Sources */,
+				49BEF92C1D5872F300956038 /* TopAnswersTableViewCell.m in Sources */,
 				49057EAF1D51CF6C00CB7A08 /* SearchUserResult.m in Sources */,
 				49063B961D4F3BAA0064231B /* PostAnswersTableViewCell.m in Sources */,
 				49BEF9261D5344BA00956038 /* SettingsViewController.m in Sources */,
@@ -616,7 +617,6 @@
 				49063B8C1D4F0A310064231B /* PostsTableViewCell.m in Sources */,
 				49057EA91D51CE0E00CB7A08 /* SearchUserTableViewCell.m in Sources */,
 				49063B901D4F127D0064231B /* PostsViewController.m in Sources */,
-				498EC54D1D5078260097C89E /* TopAnswersTableViewCell.m in Sources */,
 				49834E581D4EDBC0005117BB /* UserTrend.m in Sources */,
 				49834E5E1D4EDCA7005117BB /* UserModel.m in Sources */,
 				49BEF91F1D533FF800956038 /* WebViewController.m in Sources */,
