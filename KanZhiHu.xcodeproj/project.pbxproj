@@ -29,6 +29,7 @@
 		49BEF91F1D533FF800956038 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF91E1D533FF800956038 /* WebViewController.m */; };
 		49BEF9231D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */; };
 		49BEF9261D5344BA00956038 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9251D5344BA00956038 /* SettingsViewController.m */; };
+		49BEF9291D586A0700956038 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF9281D586A0700956038 /* MainTabViewController.m */; };
 		49DBD8731D4B58550087A8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8721D4B58550087A8D0 /* main.m */; };
 		49DBD8761D4B58550087A8D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD8751D4B58550087A8D0 /* AppDelegate.m */; };
 		49DBD87E1D4B58550087A8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DBD87D1D4B58550087A8D0 /* Assets.xcassets */; };
@@ -107,6 +108,8 @@
 		49BEF9221D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+M13ProgressViewBar.m"; sourceTree = "<group>"; };
 		49BEF9241D5344BA00956038 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controller/SettingsViewController.h; sourceTree = "<group>"; };
 		49BEF9251D5344BA00956038 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controller/SettingsViewController.m; sourceTree = "<group>"; };
+		49BEF9271D586A0700956038 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabViewController.h; path = Controller/MainTabViewController.h; sourceTree = "<group>"; };
+		49BEF9281D586A0700956038 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabViewController.m; path = Controller/MainTabViewController.m; sourceTree = "<group>"; };
 		49DBD86E1D4B58550087A8D0 /* KanZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBD8721D4B58550087A8D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DBD8741D4B58550087A8D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				49BEF9201D5340FF00956038 /* NavigationController */,
+				49BEF9271D586A0700956038 /* MainTabViewController.h */,
+				49BEF9281D586A0700956038 /* MainTabViewController.m */,
 				49063B8E1D4F127D0064231B /* PostsViewController.h */,
 				49063B8F1D4F127D0064231B /* PostsViewController.m */,
 				49057EB31D51ECF200CB7A08 /* SearchResultViewController.h */,
@@ -603,6 +608,7 @@
 				49BEF9231D5340FF00956038 /* UINavigationController+M13ProgressViewBar.m in Sources */,
 				49DBD8AD1D4B5B2D0087A8D0 /* PostAnswer.m in Sources */,
 				499585801D4EF0FE00DAB88C /* GetPostsResult.m in Sources */,
+				49BEF9291D586A0700956038 /* MainTabViewController.m in Sources */,
 				49057EB51D51ECF200CB7A08 /* SearchResultViewController.m in Sources */,
 				49DBD8AA1D4B58F40087A8D0 /* Post.m in Sources */,
 				49DBD8B01D4B5BC60087A8D0 /* UserDetail.m in Sources */,

@@ -74,7 +74,7 @@
     self.navigationItem.titleView = searchBar;
     
     self.swipeGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGRReconized:)];
-    [self.view addGestureRecognizer:self.swipeGR];
+//    [self.view addGestureRecognizer:self.swipeGR]; //改用TabBar
     
     NSLog(@"%s", __func__);
 }

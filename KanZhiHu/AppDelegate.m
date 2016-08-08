@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "PostsViewController.h"
+#import "MainTabViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +20,8 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    PostsViewController *vc = PostsViewController.new;
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-    nvc.navigationBar.translucent = NO;
-    self.window.rootViewController = nvc;
+    MainTabViewController *mvc = MainTabViewController.new;
+    self.window.rootViewController = mvc;
     
     [UINavigationBar.appearance setBarTintColor:[UIColor colorWithRed:0.3 green:0.7 blue:1 alpha:1]];
     

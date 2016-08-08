@@ -33,7 +33,13 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"%s", __func__);
+    self.title = @"Setting";
     [self setupViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.lbSize.text = [self stringFromSize:[[SDImageCache sharedImageCache] getSize]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +71,7 @@
     [self.view addSubview:self.btnClear];
     [self.view addSubview:self.lbJump];
     [self.view addSubview:self.switchJump];
-    [self.view addSubview:self.cancelButton];
+//    [self.view addSubview:self.cancelButton];
     
     [self.lbSize mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.view).with.offset(-40);
@@ -87,13 +93,13 @@
         make.centerX.equalTo(self.btnClear);
         make.centerY.equalTo(self.lbJump);
     }];
-    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.lbJump).with.offset(80);
-        make.centerX.equalTo(self.view);
-        make.left.equalTo(self.lbSize);
-        make.right.equalTo(self.btnClear);
-        make.height.mas_equalTo(40);
-    }];
+//    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(self.lbJump).with.offset(80);
+//        make.centerX.equalTo(self.view);
+//        make.left.equalTo(self.lbSize);
+//        make.right.equalTo(self.btnClear);
+//        make.height.mas_equalTo(40);
+//    }];
 }
 
 - (void)clearButtonClicked:(UIButton *)button {
